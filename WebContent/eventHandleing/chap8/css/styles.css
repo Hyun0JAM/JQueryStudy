@@ -1,0 +1,45 @@
+@charset "UTF-8";
+#container{
+	width: 90%;
+	border: 0px solid;
+	margin: 0 auto;
+	padding-left:2%;
+	padding-bottom:3%;}
+#firstdiv{
+	width: 1200px;
+	border: 0px solid;
+	margin:0 auto;
+	margin-top: 5%;}
+.buttons{
+	width:60px;
+	height:20px;
+	border:none;
+	background-color: #dadada;
+	border-radius: 3px;
+	margin: 10px;
+	padding: 5px 10px;
+	color: #464646;/* red = rgb(255,0,0)*/
+	font-size: 12pt;
+	font-weight:bold;
+	cursor:pointer;
+	opacity:0.8;}
+.changebuttons{border: 2px dotted;}
+.buttons:hover{
+	background-color:darkgray;
+	color:white;
+	transition: 0.5s;}
+button{
+	width:60px;
+	height:20px;
+	border:none;
+	background-color: #dadada;
+	border-radius: 3px;
+	color: #464646;
+	font-size: 11pt;
+	font-weight:bold;
+	font-family: 'Song Myung', serif;
+	border:1px solid gray;}
+button:hover{
+	background-color:darkgray;
+	transition: 0.5s;}
+body{font-family: 'Song Myung', serif;}

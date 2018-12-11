@@ -1,0 +1,67 @@
+@charset "UTF-8";
+#container{
+	width: 800px;
+	border: 0px solid;
+	margin: 0 auto;
+	padding-left:2%;
+	padding-bottom:3%;}
+#firstdiv{
+	width:500px;
+	border: 0px solid;
+	margin:0 auto;
+	margin-top: 5%;}
+#seconddiv{
+	width: 500px;
+	border: 2px solid #dadada;
+	border-radius:5px;
+	margin: 0 auto;
+	margin-top: 5%;
+	margin-bottom: 2%;}
+#comment{font-size:11pt;}
+#picture, #comment{
+	margin:10px;
+	text-align:center;
+	align:center}
+.img{margin:5%;}
+.resizeBorder{
+	width:80px;
+	height:110px;
+	border:2px solid red;}
+.buttons{
+	background-color: #dadada;
+	width: 100px;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 10px;
+	margin: 40px;
+	padding: 15px 20px;
+	color: #464646;/* red = rgb(255,0,0)*/
+	font-size: 12pt;
+	font-weight:bold;
+	cursor:pointer;
+	opacity:0.3;}
+.buttons:hover{
+	background-color:darkgray;
+	color:white;
+	transition: 0.5s;}
+body{font-family: 'Song Myung', serif;}
+.name{color:gray;}
+#more{
+	text-align:center;
+	color:black;
+	text-decoration:none;
+	font-size:11pt;
+	margin-top:0;}
+.more,.close,#view{
+	text-align:center;
+	font-size:10pt;
+	font-weight:bold;
+	color: #ff6f72;
+	text-decoration: underline;
+	cursor:pointer;}
+#close{
+	margin-top:5px;
+	margin-bottom:5px;
+	color: #ff6f72;
+	cursor: pointer;}
+#view{color: navy;}

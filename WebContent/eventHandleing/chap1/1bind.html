@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>어느 버튼을 클릭했는지 확인하기(bind)</title>
+<!-- 웹페이지에 버튼이 여러개 있고 각각의 버튼은 서로 다른일을 한다.
+	  버튼에 대한 이벤트를 올바르게 처리ㅏㅎ려면 어느버튼을 클릭했는지 알아야 한다. -->
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<script type="text/javascript" src="/JQueryStudy/js/jquery-2.0.0.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var text = "";
+	$(".bold").bind("click",function(){
+		text = $(this).text();/* text는 innerHTML과 같은역할 */
+		alert(text+" 버튼을 클릭 하셨네요.");
+	});
+	$(".italic").bind("click",function(){
+		text = $(this).text();/* $(this)는 이벤트가 발생된 선택자를 말한다. */
+		alert(text+" 버튼을 클릭 하셨네요.");
+	});
+});
+</script>
+</head>
+<body>
+	<div id="firstdiv">
+		<span class="buttons bold">굵게</span> 
+		<span class="buttons italic">기울임꼴</span>
+	</div>
+</body>
+</html>

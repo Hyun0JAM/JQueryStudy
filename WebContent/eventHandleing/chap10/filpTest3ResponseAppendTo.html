@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>부트스트랩을 사용한 반응형 웹페이지에 filp효과 주기(appendTo)</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<script type="text/javascript">
+	$(document).ready(function() {
+		var personArr = [{name:"김태희", age:44, school:"서울대학교", image:"kimth.jpg", largeimage:"kimthLarge.jpg"}
+        				,{name:"아이유", age:24, school:"인천대학교", image:"iyou.jpg", largeimage:"iyouLarge.jpg"}
+        				,{name:"박보영", age:34, school:"수원대학교", image:"parkby.jpg", largeimage:"parkbyLarge.jpg"}];
+		
+		/* 태그의 내용을 더 추가 할 때는 
+			prepend() 메소드==> 선택자에서 맨앞에서 부터 추가
+			append() 메소드 ==> 선택자 맨 뒤에서 부터 추가
+			$(선택자).append("추가할 태그내용"); 과 똑같은 것이 $("추가할 태그내용").appendTo($(선택자)); 이다.*/
+		for(var i=0;i<personArr.length;i++){
+			$("<span class='tdMenu'>"+personArr[i].name+"</span>").appendTo($("#menu"));
+			$("#picture").append("<div class='col-md-4 flip-card' style='margin-right:3%'>"
+									+"<div class='flip-card-inner'>"
+										+"<div class='flip-card-front'>"
+											+"<img src='images/"+personArr[i].largeimage+"' alt='Avatar' style='width:228px;height:178px;'>"
+										+"</div>"
+										+"<div class='flip-card-back'>"
+											+"<h1>"+personArr[i].name+"</h1>"
+											+"<p>"+personArr[i].age+"</p>"
+											+"<p>"+personArr[i].school+"</p>"
+									    +"</div>"
+									+"</div>"
+								+"</div>");
+		}
+	});// end of $(document).ready()
+</script>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<div class="row">
+				<div class="col-md-12">Header</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12" id="menu" style="margin-top:1%;"></div>
+			</div>
+		</div>
+		<div id="content">
+			<div class="row" style="margin:0 auto;">
+				<div class="col-md-12" style="margin-bottom:3%">
+					Content1<br/>
+					Content1Content2<br/>
+					Content1Content2Content3<br/>
+				</div>
+				<div class="row" id="picture" style="margin:0 auto;">
+					
+				</div>
+			</div>
+		</div>
+		<div id="sideinfo">SideInfo
+		</div>
+		<div id="footer">Footer</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+

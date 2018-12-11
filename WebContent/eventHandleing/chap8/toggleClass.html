@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>toggleClass</title>
+<!-- 선택자.toggleClass("클래스명1") : 선택자에 클래스명이 적용되어있으면 선택자에 클래스명1을 자동으로 제거,없으면 추가  -->
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
+<script type="text/javascript" src="/JQueryStudy/js/jquery-2.0.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var cnt=0;
+		$(".buttons").click(function(){/* $(".buttons label") 모든 자식 선택자를 뜻함 */
+			$(this).toggleClass("changebuttons");
+		});
+		// radio와 checkbox의 체크여부 확인하기
+		// $("input:checkbox[name=이름]").is(":checked"); 또는 $("input:radio[name=이름]").is(":checked");
+		// ture 또는 false를 반환한다.
+		$("#btnOK").click(function(){
+			if(!$("input:checkbox[name=person]").is(":checked")) alert("최소한 한명이상은 선택 하셔야합니다.");
+			else alert("선택완료");
+			var personArr = document.getElementsByName("person");//Element's'!!
+			var nameArr = new Array();
+			for(var i=0;i<personArr.length;i++){
+				if($("input:checkbox[id=person"+i+"]").is(":checked")){
+					cnt++;
+					nameArr.push($("input:checkbox[id=person"+i+"]").val());
+				}
+			}
+			if(cnt!=2) alert("2명만 선택 하세요!!");
+			else alert("선택하신 사람 : "+nameArr.join(","));
+			$("input:checkbox[name=person]").prop("checked",false);// 체크박스 해제하기
+			$(".buttons").removeClass("changebuttons");
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="container">
+		<div id="firstdiv">
+			<span class="buttons"><label for ="person0">김태희</label>
+				<input type="checkbox" name="person" id="person0" value="김태희"></span>
+			<span class="buttons"><label for ="person1">아이유</label>
+				<input type="checkbox" name="person" id="person1" value="아이유"></span>
+			<span class="buttons"><label for ="person2">박보영</label>
+				<input type="checkbox" name="person" id="person2" value="박보영"></span>
+			<span class="buttons"><label for ="person3">최현영</label>
+				<input type="checkbox" name="person" id="person3" value="최현영"></span>
+			<span class="buttons"><label for ="person4">김보현</label>
+				<input type="checkbox" name="person" id="person4" value="김보현"></span>
+			<button type="button" id="btnOK">확인</button>
+		</div>
+	</div>
+</body>
+</html>

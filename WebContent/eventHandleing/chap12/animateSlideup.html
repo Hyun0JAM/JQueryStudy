@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 스크롤하기</title>
+<script type="text/javascript" src="/JQueryStudy/js/jquery-2.0.0.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#fish1").click(function(){
+			$(this).animate({left:600,top:500},5000);
+			/* position이 relative일 경우 선택자인 이미지를 왼쪽으로부터 600 위에서부터 500 만큼 5초동안 움직여라 */
+		});
+		$("#fish2").click(function(){
+			$(this).animate({left:600,top:500},5000);
+			/* position이 relative일 경우 선택자인 이미지를 왼쪽으로부터 600 위에서부터 500 만큼 5초동안 움직여라 */
+		});
+	});
+</script>
+</head>
+<body>
+	<img id="fish1" src="images/fish.jpg" style="position: relative;"/>
+	<br/><br/><br/><br/><br/><br/>
+	<img id="fish2" src="images/fish.jpg" style="position: absolute;"/>
+</body>
+</html>

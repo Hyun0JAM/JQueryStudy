@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 처리로 태그 내용물 추가하기(prepend(앞), append(뒤)), 태그내용물 제거하기(empty(), remove(), detach())</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
+<script type="text/javascript" src="/JQueryStudy/js/jquery-2.0.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var commentArr = new Array();
+		var pictureArr = ["kimth.jpg","iyou.jpg","parkby.jpg"];
+		commentArr.push("1.성명 : <span class='name'>김태희님</span><br />2.나이 : 44세");
+		commentArr.push("1.성명 : <span class='name'>아이유님</span><br />2.나이 : 23세");
+		commentArr.push("1.성명 : <span class='name'>박보영님</span><br />2.나이 : 34세");
+		
+		var moreCommentArr = new Array();
+		moreCommentArr.push("3.주소 : 서울시 강동구<br />4.학력 : 서울대");
+		moreCommentArr.push("3.주소 : 서울시 강서구<br />4.학력 : 인천대");
+		moreCommentArr.push("3.주소 : 서울시 강북구<br />4.학력 : 수원대");
+		
+		var moreComment = "<br/><span class='more'> 프로필더보기</span>";
+		var close = "<br/><br/><span class='close'>프로필 닫기</span>";
+		/* $("#comment").prepend("<br /> 앞에서부터 추가")
+		   $("#comment").append("<br /> 뒤에서부터 추가")*/
+		$(".buttons").hover(function(){
+								var $target = $(event.target);
+								if($target.is(".name1")) {
+									$("#picture").html(getImage(pictureArr[0]));
+									$("#comment").html(commentArr[0]+moreComment);
+									$("#more").html("<span id='view'>프로필 상세</span><br/>"+moreCommentArr[0]+close);
+								}
+								else if($target.is(".name2")) {
+									$("#picture").html(getImage(pictureArr[1]));
+									$("#comment").html(commentArr[1]+moreComment);
+									$("#more").html("<span id='view'>프로필 상세</span><br/>"+moreCommentArr[0]+close);
+								}
+								else if($target.is(".name3")) {
+									$("#picture").html(getImage(pictureArr[2]));
+									$("#comment").html(commentArr[2]+moreComment);
+									$("#more").html("<span id='view'>프로필 상세</span><br/>"+moreCommentArr[0]+close);
+								}
+								$("#more").hide();
+								$(".more").click(function(){
+									$("#more").show();
+									$(".more").hide();
+								});
+								$(".close").click(function(){
+									$("#more").hide();
+									$(".more").show();
+								});
+						   },function(){});
+	});
+	function getImage(imgFileName){return "<img src='images/"+imgFileName+"' />";}
+</script>
+</head>
+<body>
+	<div id="container">
+		<div id="firstdiv">
+			<span class="buttons name1">김태희</span>
+			<span class="buttons name2">아이유</span>
+			<span class="buttons name3">박보영</span>
+		</div>
+		<div id="seconddiv">
+			<div id="picture"></div>
+			<div id="comment"></div>
+			<div id="more"></div>
+		</div>
+	</div>
+</body>
+</html>

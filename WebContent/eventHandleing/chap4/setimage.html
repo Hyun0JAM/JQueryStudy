@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연예인 사진 보이기/감추기 (setImage(imagefilename),mouseover,mouseout)</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<script type="text/javascript" src="/JQueryStudy/js/jquery-2.0.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#firstdiv").click(function(){
+			$("#seconddiv").hide();
+			var $target = $(event.target);
+			if($target.is(".picture1")){
+				$("#seconddiv").show();
+				$("#seconddiv").html(setImage('kimth.jpg'));
+			}
+			else if($target.is(".picture2")){
+				$("#seconddiv").show();
+				$("#seconddiv").html(setImage('iyou.jpg'));
+			}
+			else if($target.is(".picture3")){
+				$("#seconddiv").show();
+				$("#seconddiv").html(setImage('parkby.jpg'));
+			}
+			else if($target.is(".reset")){
+				$("#seconddiv").hide();
+			}
+		});
+	});
+	function setImage(imageFileName){
+		return "<img src='images/"+imageFileName+"'>";
+	}
+</script>
+</head>
+<body>
+	<div id="container">
+		<div id="firstdiv">
+			<span class="buttons picture1">김태희</span>
+			<span class="buttons picture2">아이유</span>
+			<span class="buttons picture3">박보영</span>
+			<span class="buttons reset">초기화</span>
+		</div>
+		<div id="seconddiv">
+		</div>
+	</div>
+</body>
+</html>

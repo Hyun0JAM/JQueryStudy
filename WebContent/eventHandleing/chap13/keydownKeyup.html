@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>keydown, keyup 이벤트 구분하기</title>
+<!-- 키보드를 누를때 누르고 뗄때의 이벤트 알아보기 -->
+<script type="text/javascript" src="/JQueryStudy/js/jquery-2.0.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() { 
+		$("#text1").bind("keydown", function(){
+			$("#text2").val($(this).val());
+		});/* 키보드를 누를때 발생 */
+		$("#text3").bind("keyup", function(){
+			$("#text4").val($(this).val());
+		});/* 키보드를 땔 때 발생 */
+	});
+
+</script>
+
+</head>
+<body>
+	<form>
+		텍스트1(keydown) : <input type="text" id="text1" /><br/>
+		텍스트2(keydown) : <input type="text" id="text2" /><br/>
+		<p><p>
+		텍스트3(keyup) : <input type="text" id="text3" /><br/>
+		텍스트4(keyup) : <input type="text" id="text4" /><br/>
+	</form>
+</body>
+</html>
+
+
+

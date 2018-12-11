@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>text(), html(), val()</title>
+<!-- jQuery에서 지원되는 html()함수, text()함수, val()함수를 사용하여
+         태그들의 값들을 알아올 수 있고, 반대로 원하는 값을 태그속에 넣을수도 있다.
+         
+     $("선택자").html()
+     ==> 선택자(selector) 태그내에 존재하는 자식태그들을 몽땅 읽어올때 사용하는 함수.
+                     ※ 태그를 동적으로 추가할때 주로 사용되는 함수이다.
+                     
+     $("선택자").text()
+     ==> 선택자(selector) 태그내에 존재하는 자식태그들 중에 html 태그들은 모두 제외한채 문자열만 알아오고자 할때 사용하는 함수.
+                    ※ 데이터값을 넣고자 할때 html 태그까지 모두 문자로 인식시켜준다.
+                    
+     $("선택자").val()
+     ==> input 태그에 정의된 value 속성의 값을 알아오고자 할때 사용하는 함수.-->
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<script type="text/javascript" src="/JQueryStudy/js/jquery-2.0.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".namediv").hide();
+		$("#btnView").click(function(){
+			var html = $("#firstdiv").html();/* 매개변수가 없으므로 모든데이터를 읽어온다. */
+			console.log("html():"+html);
+			var text = $("#firstdiv").text();
+			console.log("text():"+text);
+			$(".setHtml").html(html);/* 값을 Html에 입력함 */
+			$(".setText").text(html);
+			$(".setHtml2").html(text);/* 태그로 인식되지않고 태그까지 그대로 출력된다. */
+			$(".setText2").text(text);
+			$(".view").show();/* hide()된 상태를 풀 수 있다.  */
+		});
+		$("#btnHide").click(function(){
+			$(".view").hide();/* 감춘상태로 유지된다. */
+		});
+		$("#btnName").click(function(){
+			var name = $("#name").val();
+			$("#resultName").html(name);
+			$("#name2").val(name);
+			$(".namediv").show();
+		});
+		$("#btnNameHide").click(function(){
+			$(".namediv").hide();
+		});
+		
+	});
+	/* text()는 태그내용을 제외한 모든내용, html()은 태그까지 포함한내용을 가져온다. */
+</script>
+</head>
+<body>
+	<div id="container">
+		<div id="firstdiv">
+			<h3>대한민국</h3>
+			<br />
+			<span id="fonts">Korea</span>Seoul
+		</div>
+		<div class="seconddiv">
+			<button type="button" id="btnView">보이기</button>
+			<button type="button" id="btnHide">감추기</button>
+		</div><!-- div는 자동으로 줄바꿈이 일어난다. -->
+		<div class="seconddiv">
+			<form>
+				<input type="text" id="name" size="10" value="이순신">
+				<br/>
+				<input type="text" id="name2" size="10">
+				<button type="button" id="btnName" style="margin-left:5%;">이름출력</button>
+				<button type="button" id="btnNameHide" style="margin-left:5%;">이름감추기</button>
+			</form>
+		</div>
+		<hr style="background-color:red"/><!-- 수평 선을 만든다. -->
+		<div class="setHtml view"></div>
+		<div class="setText view"></div>
+		<hr style="background-color:blue"/>
+		<div class="setHtml2 view"></div>
+		<div class="setText2 view"></div>
+		<div class="seconddiv namediv">
+			이름 : <span id="resultName" style="color:blue;font-size:14px;"></span>
+		</div>
+	</div>
+</body>
+</html>

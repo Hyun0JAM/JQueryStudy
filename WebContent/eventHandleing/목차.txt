@@ -1,0 +1,57 @@
+------------------chap1----------------------------------------
+1) bind 와 click의 사용법						1bind-1, 1bind-2
+2) bind의 이벤트 발생조건 및 bind 없이 이벤트 발생		2bind-1, 2bind-2
+3) 시작시 함수의 자동실행						testJavaScript, testJquery
+4) 값의 입력 및 hide 와 show					3TextHtmlVal
+
+------------------chap2----------------------------------------
+1) 이벤트 발생시 이벤트의 발생 금지 unbind			1unbind
+
+------------------chap3----------------------------------------
+1) 마우스를 눌렀을때(mousedown)와 땠을때(mouseup)의 이벤트 발생
+									1mousedownMouseup
+------------------chap4----------------------------------------
+1) 클릭시 이미지 띄우기						setImage
+2) mouseover(마우스 올릴시), mouseout(마우스땠을시)	setImageMouseoverMouseout
+
+------------------chap5----------------------------------------
+1) 이벤트 발생시 css 속성부여하기				1css
+2) 이벤트 발생시 class 부여하기 및 삭제하기			2addClassremoveClass
+3) mouseover와 mouseout의 톻합 hover			3hover
+
+------------------chap6----------------------------------------
+1) 투명도의 부여 opacity						1opacity, 2opacity
+
+------------------chap7----------------------------------------
+1) 내용물 비우기 empty, 태그 내용물 추가 prepend, append
+									prependAppendEmptyRemove
+
+------------------chap8----------------------------------------
+1) 클래스의 추가와 제거의 합병 toggleClass			toggleClassCheckboxRadioSelector
+
+------------------chap9----------------------------------------
+1) <div> 를 이용한 구역나눔					divTestObjectArray
+기능 : 왼쪽부터 채우기 Float
+
+------------------chap10----------------------------------------
+1) 부트스트립을 이용한 flip 효과주기				flipTest1Response
+2) javascript를 이용한  flip효과의 간략화			flipTest2Response
+3) appendTo, prependTo						flipTest3ResponseAppendTo
+
+------------------chap11----------------------------------------
+1) fadeIn, fadeOut (숨김, 나타내기 효과)			fadeinFadeout
+2) slideUp, slideDown(접기, 펼치기 효과)			slideUpslideDown
+
+------------------chap12----------------------------------------
+1) 위치의 이동 animate
+기능 : callback함수, 서서히 투명도주기 fadeTo, 계속 크게 만들기, 무한반복 이동시키기
+				1animateSlideup, 2animatefadeTo, 3animateLarge, 4animateMove, 5animateMove
+
+------------------chap13----------------------------------------
+1) keydown, keup(누르거나 땠을때의 이벤트)			fadeinFadeout
+
+------------------chap14----------------------------------------
+1) 이벤트의 버블링 막기 (중첩된 태그의 선택자 막기)		1eventBubblingFail, 2eventBubblingSuccess
+
+------------------부트스트립--------------------------------------
+bootstrapGrid(부트스트립 예제)					bootstrapGridtest

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+#container{
+	width:90%;
+	border:0px solid green;
+	margin: 0 auto;
+	padding-left:2%;
+	padding-bottom:3%;}
+#firstdiv{
+	width:80%;
+	border: 0px solid red;
+	margin-top: 2%;}
+#seconddiv{
+	width: 80%;
+	border: 0px solid blue;
+	margin-top: 5%;
+	margin-bottom: 2%;}
+#fonts{
+	font-family: 휴면옛체,궁서체,굴림체;/* 셋다 사용하는 것이아니라 첫번째것이 없으면 두번째 두번째가 없으면 세번째 글꼴을 적용하라는 것이다. */
+	font-size: 20pt;
+	font-weight:bold;
+	font-style:italic;
+	color:red;
+	background-color:yellow;}
+.buttons{
+	width: 100px;
+	border: 2px solid orange;
+	margin: 20px;
+	padding: 5px;
+	color: #ff0000;/* red = rgb(255,0,0)*/
+	background-color: yellow;
+	font-size: 15pt;
+	cursor:pointer;}

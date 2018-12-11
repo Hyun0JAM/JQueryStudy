@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DIV 태그사용 및 자바스크립트에서 객체를 사용하는 방법</title>
+
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+<script type="text/javascript" src="/JQueryStudy/js/jquery-2.0.0.js"></script> 
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		
+	/* 
+		for(var i=0; i<50; i++) {
+			$("#test").append(""+(i+1)+". 이순신<br/>");
+		}
+		
+		for(var i=0; i<50; i++) {
+			$("#sideinfo").append(""+(i+1)+". 이순신<br/>");
+		} 
+	*/
+		
+		var personArr = [{name:"김태희", age:44, school:"서울대학교", image:"kimth.jpg", largeimage:"kimthLarge.jpg"}
+		                ,{name:"아이유", age:24, school:"인천대학교", image:"iyou.jpg", largeimage:"iyouLarge.jpg"}
+		                ,{name:"박보영", age:34, school:"수원대학교", image:"parkby.jpg", largeimage:"parkbyLarge.jpg"}];
+	
+	    for(var i=0; i<personArr.length; i++) {
+	    	$("#trMenu").append("<td class='tdMenu'>"+personArr[i].name+"</td>");
+	    	$("#trContent").append("<td class='tdContent picture"+i+"'><img src='images/"+personArr[i].image+"' /></td>");
+	    } 
+	    
+	    
+	    // !!!! 중요 !!!!
+	    // *** body 태그속에 선언되어진 것이 아니라 스크립트 소스내에서 선언되어진것을 선택자로 잡아서 속성을 부여할 경우 *** 
+	    //     일반적으로 선택자를 잡아서 사용하는 경우와 동일하다.
+	    $(".tdContent").css('opacity', 0.2);
+	    // opacity CSS 속성값 0(투명, 희미함) ~ 1(불투명, 원본색깔) 또는 0% ~ 100%
+	    
+	    
+	    // !!!! 중요 !!!!
+	    // *** body 태그속에 선언되어진 것이 아니라 스크립트 소스내에서 선언되어진것을 선택자로 잡아서 이벤트를 발생할 경우 *** 
+	    //    $(document).on("이벤트종류", "선택자", function(){ });
+	    $(document).on("mouseover",".tdMenu", function(){
+	    	var $target = $(event.target);
+	    	$target.addClass("tdFont");
+	    	// CSS에 동일한 속성명이 들어올 경우 우선순위에 따라 마지막에 들어온 속성명의 속성값이 적용된다. 
+	    	
+	    	for(var i=0; i<personArr.length; i++) {
+	    		if( $target.text() == personArr[i].name ) {
+	    			$(".picture"+i+"").html("<img src='images/"+personArr[i].largeimage+"' />");
+	    			$(".picture"+i+"").css('opacity', 1.0);
+	    		}
+	    	}// end of for---------------------------
+	    	
+	    });
+	    
+	    
+	    $(document).on("mouseout",".tdMenu", function(){
+	    	$(this).removeClass("tdFont");
+	    	for(var i=0; i<personArr.length; i++) {
+	    		$(".picture"+i+"").html("<img src='images/"+personArr[i].image+"' />");
+	    		$(".picture"+i+"").css('opacity', 0.2);
+	    		
+	    	}
+	    });
+	    
+	
+	});// end of $(document).ready()------------------
+
+</script>
+
+</head>
+<body>
+	<div id="container">
+	
+		<div id="header">Header
+			<table id="tblMenu">
+				<tr id="trMenu"></tr>
+			</table>
+		</div>
+		
+		<div id="content">Content
+			<!-- sdjfklsadjflklfkjlsdkajflksdjalkfjklsdafkljsdaklfjklsdajkfljsadklfjklsadjklfjsladkjflksdjklsdjflkjwekljfklsdjlkfjsdklajflksdjlkfwjelkjldkjfkljweklfjsdkljfklsdjaflkjwelkjflksdjfkljsalkfjklsdjfklsdw3klrjfsldkfj -->
+			<!-- <div id="test"></div> -->
+			
+			<div id="picture">
+				<table id="tblContent">
+					<tr id="trContent"></tr>
+				</table>
+			</div>
+		</div>
+		
+		<div id="sideinfo">SideInfo
+		
+		</div>
+		
+		<div id="footer">Footer</div>
+	
+	</div>
+</body>
+</html>
+
+
+
+
+
+

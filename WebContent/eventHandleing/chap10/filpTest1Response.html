@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>부트스트랩을 사용한 반응형 웹페이지에 filp효과 주기</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<script type="text/javascript">
+	$(document).ready(function() {
+		var personArr = [{name:"김태희", age:44, school:"서울대학교", image:"kimth.jpg", largeimage:"kimthLarge.jpg"}
+        				,{name:"아이유", age:24, school:"인천대학교", image:"iyou.jpg", largeimage:"iyouLarge.jpg"}
+        				,{name:"박보영", age:34, school:"수원대학교", image:"parkby.jpg", largeimage:"parkbyLarge.jpg"}];
+		for(var i=0;i<personArr.length;i++){
+			$("#menu").append("<span class='tdMenu'>"+personArr[i].name+"</span>");
+		}
+	});// end of $(document).ready()
+</script>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<div class="row">
+				<div class="col-md-12">Header</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12" id="menu" style="margin-top:1%;"></div>
+			</div>
+		</div>
+		<div id="content">
+			<div class="row" style="margin:0 auto;">
+				<div class="col-md-12" style="margin-bottom:3%">
+					Content1<br/>
+					Content1Content2<br/>
+					Content1Content2Content3<br/>
+				</div>
+				<div class="row" style="margin:0 auto;">
+					<div class="col-md-4 flip-card" style="margin-right:3%">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+						    	<img src="images/kimthLarge.jpg" alt="Avatar" style="width:228px;height:178px;">
+						    </div>
+						    <div class="flip-card-back">
+						    	<h1>김태희</h1> 
+						    	<p>44세</p> 
+						    	<p>서울대학교</p>
+						    </div>
+						</div>
+					</div>
+					<div class="col-md-4 flip-card" style="margin-right:3%">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+						    	<img src="images/iyouLarge.jpg" alt="Avatar" style="width:228px;height:178px;">
+						    </div>
+						    <div class="flip-card-back">
+						    	<h1>아이유</h1> 
+						    	<p>44세</p> 
+						    	<p>서울대학교</p>
+						    </div>
+						</div>
+					</div>
+					<div class="col-md-4 flip-card" style="margin-right:3%">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+						    	<img src="images/parkbyLarge.jpg" alt="Avatar" style="width:228px;height:178px;">
+						    </div>
+						    <div class="flip-card-back">
+						    	<h1>박보영</h1> 
+						    	<p>34세</p> 
+						    	<p>수원대학교</p>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sideinfo">SideInfo
+		</div>
+		<div id="footer">Footer</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+

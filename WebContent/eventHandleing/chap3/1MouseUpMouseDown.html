@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>마우스 이벤트 처리하기(마우스를 눌렀을때 mousedown/마우스를 눌렀다가 놓았을때 mouseup)</title>
+<link rel="stylesheet" type="text/css" href="/JQueryStudy/eventHandleing/chap3/css/styles.css"/>
+<script type="text/javascript" src="/JQueryStudy/js/jquery-2.0.0.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var countBoldD=0; 
+	var countItalicD=0; 
+	var countBoldU=0; 
+	var countItalicU=0; 
+	$("#firstdiv").bind("mousedown",function(){ /* 선택자앞에는 필요는 없지만 관습상 '$'를 붙인다. */
+		var $target = $(event.target); /* (=this) event는 선택자를 클릭한것을 말한다.target은 이벤트가 발생된 태그를 말한다. */
+		if($target.is(".bold")){
+			/* (타켓)변수명.is("선택자") 은 true 또는 false를 나타내어 주는데,선택자 변수가 선택자와 일치하는 엘리먼트(태그)이라면 true */
+			countBoldD++;
+			$(".cntbold1").text(countBoldD);
+		}
+		else if($target.is(".italic")){
+			countItalicD++;
+			$(".cntitalic1").text(countItalicD);
+		}
+	});
+	$("#firstdiv").bind("mouseup",function(){ /* 선택자앞에는 필요는 없지만 관습상 '$'를 붙인다. */
+		var $target = $(event.target); /* (=this) event는 선택자를 클릭한것을 말한다.target은 이벤트가 발생된 태그를 말한다. */
+		if($target.is(".bold")){
+			/* (타켓)변수명.is("선택자") 은 true 또는 false를 나타내어 주는데,선택자 변수가 선택자와 일치하는 엘리먼트(태그)이라면 true */
+			countBoldU++;
+			$(".cntbold2").text(countBoldU);
+		}
+		else if($target.is(".italic")){
+			countItalicU++;
+			$(".cntitalic2").text(countItalicU);
+		}
+	});
+	$(".reset").click(function(){
+		$(".cnt").html(" ");
+		countBoldD=0; 
+		countItalicD=0; 
+		countBoldU=0; 
+		countItalicU=0; 
+	});
+});
+</script>
+</head>
+<body>
+	<div id="container">
+		<div id="firstdiv">
+			<span class="buttons bold">굵게</span> 
+			<span class="buttons italic">기울임꼴</span>
+			<span class="buttons reset">초기화</span>
+		</div>
+		<div id="seconddiv">
+			굴게 버튼(mousedown) : <span class="cnt cntbold1"></span> 번 클릭함
+			<br/>
+			기울임꼴 버튼(mousedown) : <span class="cnt cntitalic1"></span> 번 클릭함
+			<br/><hr/><br/>
+			굴게 버튼(mouseup) : <span class="cnt cntbold2"></span> 번 클릭함
+			<br/>
+			기울임꼴 버튼(mouseup) : <span class="cnt cntitalic2"></span> 번 클릭함
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 처리로 태그 내용물 추가하기(prepend(), append()), 태그내용물 제거하기(emplty), remove(), detach())</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
+<script type="text/javascript" src="/JQueryStudy/js/jquery-2.0.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var commentArr = new Array();
+		var pictureArr = ["kimth.jpg","iyou.jpg","parkby.jpg"];
+		commentArr.push("1.성명 : <span class='name'>김태희님</span><br />2.나이 : 44세");
+		commentArr.push("1.성명 : <span class='name'>아이유님</span><br />2.나이 : 23세");
+		commentArr.push("1.성명 : <span class='name'>박보영님</span><br />2.나이 : 34세");
+		
+		$(".buttons").hover(function(){
+								var $target = $(event.target);
+								if($target.is(".name1")) {
+									$("#picture").html(getImage(pictureArr[0]));
+									$("#comment").html(commentArr[0]);
+								}
+								else if($target.is(".name2")) {
+									$("#picture").html(getImage(pictureArr[1]));
+									$("#comment").html(commentArr[1);
+								}
+								else if($target.is(".name3")) {
+									$("#picture").html(getImage(pictureArr[2]));
+									$("#comment").html(commentArr[2]);
+								}
+						   },function(){});
+		
+	});
+	function getImage(imgFileName){
+		return "<img src='images/"+imgFileName+"' />";
+	}
+</script>
+</head>
+<body>
+	<div id="container">
+		<div id="firstdiv">
+			<span class="buttons name1">김태희</span>
+			<span class="buttons name2">아이유</span>
+			<span class="buttons name3">박보영</span>
+		</div>
+		<div id="seconddiv">
+			<div id="picture"></div>
+			<div id="comment"></div>
+		</div>
+	</div>
+</body>
+</html>

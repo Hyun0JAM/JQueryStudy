@@ -1,0 +1,74 @@
+@charset "UTF-8";
+#container { 
+	background-color: #F0F0F0;
+	width : 98%;
+	margin: 0px auto;
+	padding: 1%;
+	border: 0px solid red; }         
+#header { 
+	background-color: #908886;
+	height: 100px;
+	padding: 2%;
+	border: 0px solid red; }
+#content {
+	float: left;
+	background-color: #F5F5F5;
+    width: 75.5%;  
+    min-height: 600px; 
+    padding: 2%;   
+    border: 0px solid red;}	          
+#sideinfo {
+	float: right;
+	background-color: #DCDAD9;
+    width: 15.5%;  
+    min-height: 600px;  
+    padding: 2%;
+    border: 0px solid red;}            
+#footer {
+	clear: both;
+	background-color: #555555;
+    height: 100px;
+    padding: 2%; 
+	border: 0px solid red;}  
+#tblMenu {
+	border: 0px solid red;
+    border-collapse: collapse;
+    position: relative;
+    margin-top: 2%;
+    margin-left: 20%; }	      
+#tblContent {
+	border: 0px solid red;
+    border-collapse: collapse;
+    position: relative;
+    margin-top: 5%;
+    margin-left: 4%;}                    
+.tdMenu {
+	border: 0px solid red;
+    padding: 9px;
+    font-size: 13pt;
+    font-weight: bold;
+    color: #ffffcc;
+    cursor: pointer; }
+.tdContent  {
+	border: 0px solid red;
+    padding: 20px;}         
+.tdFont {
+	font-size: 15pt;
+    color: #ffff80;}            
+.morebtn {
+	cursor:pointer;
+	color:blue;}
+.closebtn {
+	cursor:pointer;
+	color:red;}
+/* -------------------------------------------------------- */
+body{font-family: 'Song Myung', serif;}
+
+
+	                        	  
+		  
+		  
+		  
+		  
+		  
+		  	         

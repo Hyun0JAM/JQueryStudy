@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>특정 이벤트 비활성화 시키기(PreventDefault)</title>
+<!-- 웹페이지에 버튼이 여러개 있고 각각의 버튼은 서로 다른일을 한다.
+	  버튼에 대한 이벤트를 올바르게 처리ㅏㅎ려면 어느버튼을 클릭했는지 알아야 한다. -->
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<script type="text/javascript" src="/JQueryStudy/js/jquery-2.0.0.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var text = "";
+	$(".like").bind("click",function(event){
+		event.preventDefault();
+		text = $(this).text();/* 클릭이벤트에 대해서 이벤트핸들러를 제거 (계속 이벤트를 발생시켜도 한번만 진행된다.) */
+		alert(text+" 버튼을 클릭 하셨네요.");
+		$(this).unbind("click");
+	});
+	$(".dislike").bind("click",function(event){
+		event.preventDefault();
+		text = $(this).text();
+		alert(text+" 버튼을 클릭 하셨네요.");
+		$(this).unbind("click");
+	});
+});
+</script>
+</head>
+<body>
+	<div id="firstdiv">
+		<span class="buttons like">좋아요</span> 
+		<span class="buttons dislike">싫어요</span>
+	</div>
+</body>
+</html>

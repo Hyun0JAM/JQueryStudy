@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 스크롤 하기 [ fadeTo() ]</title> <!-- 왼쪽에서 오른쪽으로 스크롤/ 이미지를 희미하게 한 후에 특정함수를 실행 하고 싶다. -->
+<style type="text/css">
+img{
+	width:200px;
+	height:150px;
+}
+</style>
+<script type="text/javascript" src="/JQueryStudy/js/jquery-2.0.0.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#div1").click(function(){
+			$(this).animate({left:600,top:500},5000).fadeTo(2000,0.0,function(){
+				$("#div1").html("<img src='images/kimthLarge.jpg'>");});
+			/* fadeTo(1000,0.1,함수명); 선택자를 1초동안 0.1 투명도로한 후 함수 실행 이때 실행하는 함수를 callback함수라고 부른다. */
+		});
+		var imgArr = ["kimthLarge.jpg","iyouLarge.jpg","parkbyLarge.jpg"];
+		var i=-1;
+		$("#div2").click(function(){
+			$target = $(event.target);
+			if($target.is("#fish1")) i=1;
+			else if($target.is("#fish2")) i=2;
+			else if($target.is("#fish3")) i=3;
+			$("#fish"+i+"").fadeTo(500,0.0,function(){
+				$("#fish"+i+"").hide();
+				$("#span"+i+"").html("<img src='images/"+imgArr[i-1]+"' style='margin-right:30px;'>");
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	1. position relative<br/>
+	<div id="div1" style="position: relative;">
+		<img src="images/fish.jpg" style="position: relative;"/>
+	</div>
+	2. 김태희를 찾아라<br/>
+	<div id="div2" style="position: relative;">
+		<span id="span1"></span><img id="fish1" src="images/fish.jpg" style="margin-right:30px;"/>
+		<span id="span2"></span><img id="fish2" src="images/fish.jpg" style="margin-right:30px;"/>
+		<span id="span3"></span><img id="fish3" src="images/fish.jpg"/>
+	</div>
+</body>
+</html>

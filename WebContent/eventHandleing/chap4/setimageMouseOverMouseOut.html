@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연예인 사진 보이기/감추기 (setImage(imagefilename))</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<script type="text/javascript" src="/JQueryStudy/js/jquery-2.0.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#firstdiv").mouseover(function(){
+			$("#seconddiv").show();
+			var $target = $(event.target);
+			if($target.is(".picture1")){
+				$("#face").html(setImage('kimth.jpg'));
+				$("#comment").html("1.성명 : <span id='fonts'>김태희</span><br/>2.나이:39세");
+			}
+			else if($target.is(".picture2")){
+				$("#face").html(setImage('iyou.jpg'));
+				$("#comment").html("1.성명 : <span id='fonts'>아이유</span><br/>2.나이:24세");
+			}
+			else if($target.is(".picture3")){
+				$("#face").html(setImage('parkby.jpg'));
+				$("#comment").html("1.성명 : <span id='fonts'>박보영</span><br/>2.나이:30세");
+			}
+		});
+	});
+	$(document).ready(function(){
+		$("#firstdiv").mouseout(function(){
+			$("#seconddiv").hide();
+		});
+	});
+	function setImage(imageFileName){
+		return "<img src='images/"+imageFileName+"'>";
+	}
+</script>
+</head>
+<body>
+	<div id="container">
+		<div id="firstdiv">
+			<span class="buttons picture1">김태희</span>
+			<span class="buttons picture2">아이유</span>
+			<span class="buttons picture3">박보영</span>
+		</div>
+		<div id="seconddiv">
+			<div id="face" style="margin-bottom:3%;">
+			</div>
+			<div id="comment">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
